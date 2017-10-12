@@ -1,6 +1,8 @@
 import $ from 'jquery'
-//import './style.css'
+
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
+
 import './custom-styles.css'
 
 $(function(){
