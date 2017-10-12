@@ -3,9 +3,12 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: {
+    home:"./src/home/home.js",
+    page1:"./src/page1/page1.js"
+  },
   output: {
-    filename:'bundle.js',
+    filename:'[name]_bundle.js',
     path: path.resolve('build'),
     publicPath: '/assets/'
   },
@@ -13,11 +16,17 @@ module.exports = {
     contentBase: 'public'
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "commons",
+      filename: "commons_bundle.js"
+    }),
+    new ExtractTextPlugin({
+        filename:'[name].css'
     })
   ],
   module: {

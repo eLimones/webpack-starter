@@ -1,9 +1,9 @@
-import $ from 'jquery'
+import $ from 'jquery';
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
-import './custom-styles.css'
+import './home.css';
 
 $(function(){
   $('#myButton').click(function() {
@@ -13,6 +13,6 @@ $(function(){
   $('#otherButton').click(function() {
     console.log('Click on: right');
   });
-  console.log('Hello, World!');
+  console.log('This is home');
 });
 
